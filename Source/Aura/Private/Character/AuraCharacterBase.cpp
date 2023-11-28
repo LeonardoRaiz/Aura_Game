@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright 3Ducks
 
 
 #include "Character/AuraCharacterBase.h"
@@ -8,6 +8,13 @@ AAuraCharacterBase::AAuraCharacterBase()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
+
+	//Criar componente da arma
+	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>("Weapon");
+	//Colocar a arma em um Socket
+	Weapon->SetupAttachment(GetMesh(), FName("WeaponHandSocket"));
+	//Remover a colisão
+	Weapon->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 }
 
