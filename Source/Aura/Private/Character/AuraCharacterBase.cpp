@@ -9,7 +9,7 @@ AAuraCharacterBase::AAuraCharacterBase()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
-	//Criar componente da arma
+	//Criar componente da arma para fixar com a malha
 	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>("Weapon");
 	//Colocar a arma em um Socket
 	Weapon->SetupAttachment(GetMesh(), FName("WeaponHandSocket"));
